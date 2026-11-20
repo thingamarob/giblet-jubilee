@@ -101,9 +101,7 @@
      {dish: "Turkey, 2 slices", cal: 320, time: "2:05 PM"},
      {dish: "Stuffing, heroic scoop", cal: 350, time: "2:11 PM"},
    ============================================================ */
-var ENTRIES = [ 
-      {dish: "Turkey, 2 slices", cal: 320, time: "2:05 PM"},
-      {dish: "Stuffing, heroic scoop", cal: 350, time: "2:11 PM"},
+var ENTRIES = [
 ];
 </script>
 <script>
@@ -118,9 +116,9 @@ var ENTRIES = [
 
   function statusFor(t){
     var p = t / TARGET;
-    if (t === 0) return ['Pre-event','<b>Locking in.</b> Manifesting sustained hunger.'];
-    if (p < .2)  return ['Warm-up','<b>Nausea isn&#39t real.</b> Pacing is everything.'];
-    if (p < .5)  return ['Early race','<b>Connect with your inner giblet.</b>.'];
+    if (t === 0) return ['Pre-event','<b>Lock in.</b>'];
+    if (p < .2)  return ['Warm-up','<b>Nausea isn&#39t real.</b>'];
+    if (p < .5)  return ['Early race','<b>Maintain sustainable pace.</b>.'];
     if (p < .75) return ['Midrace','<b>Do not succumb to the siren song of pie.</b>'];
     if (p < .95) return ['The wall','<b>The wall.</b> This is where champions are made.'];
     if (p < 1)   return ['Final stretch','<b>So close.</b> One more roll. Just one.'];
@@ -132,7 +130,7 @@ var ENTRIES = [
     if (now >= EVENT_DAY && now < end) return '<b>EVENT DAY.</b>Time to eat.';
     if (now >= end) return 'The event has concluded. Final results are official.';
     var ms = EVENT_DAY - now, d = Math.floor(ms/86400000), h = Math.floor(ms%86400000/3600000);
-    return 'Race day in <b>' + d + 'd ' + h + 'h</b> · Thanksgiving, Nov 26';
+    return 'Turkey day in <b>' + d + 'd ' + h + 'h</b> · Thanksgiving, Nov 26';
   }
 
   function render(){
@@ -167,8 +165,8 @@ var ENTRIES = [
     var html;
     if (!list.length){
       html = '<span class="item"><em>AWAITING FIRST BITE</em> — event begins Thanksgiving Day</span>' +
-             '<span class="item">Athlete is carb-loading and emotionally preparing</span>' +
-             '<span class="item">Stretchy pants confirmed</span>';
+             '<span class="item">Connecting with my inner giblet.</span>' +
+             '<span class="item">Fine-tuning fork technique.</span>';
     } else {
       html = list.map(function(e){
         return '<span class="item"><i>'+esc(ago(e.time))+'</i>'+esc(e.dish)+' <em>+'+fmt(e.cal)+' cal</em></span>';
