@@ -82,7 +82,7 @@
 <body>
 <header>
   <div class="live"><span class="dot"></span><span id="livetxt">Live Gluttony Tracking</span></div>
-  <h1>1 day.<span>5000 calories.</span></h1>
+  <h1>1 day.<span> 5000 calories.</span></h1>
   <div class="sub">It's more food than you'd think.</div>
 </header>
 
@@ -101,7 +101,9 @@
      {dish: "Turkey, 2 slices", cal: 320, time: "2:05 PM"},
      {dish: "Stuffing, heroic scoop", cal: 350, time: "2:11 PM"},
    ============================================================ */
-var ENTRIES = [
+var ENTRIES = [ 
+      {dish: "Turkey, 2 slices", cal: 320, time: "2:05 PM"},
+      {dish: "Stuffing, heroic scoop", cal: 350, time: "2:11 PM"},
 ];
 </script>
 <script>
@@ -116,10 +118,10 @@ var ENTRIES = [
 
   function statusFor(t){
     var p = t / TARGET;
-    if (t === 0) return ['Pre-event','<b>Stretching.</b> Stomach lining loosened.'];
-    if (p < .2)  return ['Warm-up','<b>Warming up.</b> Pacing is everything.'];
-    if (p < .5)  return ['Early race','<b>Finding rhythm.</b> Belt still holding.'];
-    if (p < .75) return ['Midrace','<b>Hitting stride.</b> Pie lane is open.'];
+    if (t === 0) return ['Pre-event','<b>Locking in.</b> Manifesting sustained hunger.'];
+    if (p < .2)  return ['Warm-up','<b>Nausea isn&#39t real.</b> Pacing is everything.'];
+    if (p < .5)  return ['Early race','<b>Connect with your inner giblet.</b>.'];
+    if (p < .75) return ['Midrace','<b>Do not succumb to the siren song of pie.</b>'];
     if (p < .95) return ['The wall','<b>The wall.</b> This is where champions are made.'];
     if (p < 1)   return ['Final stretch','<b>So close.</b> One more roll. Just one.'];
     return ['Complete','<b>TARGET ACHIEVED.</b> History has been made.'];
@@ -127,7 +129,7 @@ var ENTRIES = [
 
   function countdownText(){
     var now = new Date(), end = new Date(EVENT_DAY.getTime() + 24*3600*1000);
-    if (now >= EVENT_DAY && now < end) return '<b>EVENT DAY.</b> Training is over. It is time.';
+    if (now >= EVENT_DAY && now < end) return '<b>EVENT DAY.</b>Time to eat.';
     if (now >= end) return 'The event has concluded. Final results are official.';
     var ms = EVENT_DAY - now, d = Math.floor(ms/86400000), h = Math.floor(ms%86400000/3600000);
     return 'Race day in <b>' + d + 'd ' + h + 'h</b> · Thanksgiving, Nov 26';
